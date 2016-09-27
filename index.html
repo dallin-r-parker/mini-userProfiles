@@ -6,11 +6,24 @@
     <link rel="stylesheet" href="styles.css"></link>
 </head>
 <body ng-controller="MainController">
-    
-    {{thisAppIsBroken}}
-    
+
+
+<div ng-repeat="user in userGet">
+    <img ng-src="{{user.avatar}}"></img>
+    <h1>{{user.first_name}}</h1>
+    <h2>{{user.last_name}}</h2>
+    <button ng-click="toggleFav(user.id)" ng-class="{favorite: user.isFavorite}">+</button>
+</div>
+
+
+
+
+
+
+
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
      <script src="app.js"></script>
      <script src="controller.js"></script>
+     <script src="service.js"></script>
 </body>
 </html>
